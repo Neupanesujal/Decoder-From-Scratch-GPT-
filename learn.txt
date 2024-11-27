@@ -1,0 +1,20 @@
+autoregressive generation method: means it predicts one token at a time based on previous context(idx).
+B is batch size ie number of sequences processed simultaneously
+T is sequence length ie. number of token in each sequence
+C is number of classes (vocabulary size)
+
+Query (Q): This represents "What am I looking for?" It’s like a question or a request. For example, a token might ask: “What words are related to me?”
+
+Key (K): This represents "What do I have to offer?" It’s like a label or a tag that tells others what kind of information this token contains. 
+             For example, another token might say: “I contain information about location, like 'Paris'.”
+
+Value (V): This represents "What am I sharing if someone finds me interesting?" 
+            It’s the actual content or information a token will provide when it’s selected based on the query and key.
+
+Imagine you’re in a library:
+Query (Q): You are asking the librarian, “I need information about science fiction books.”
+Key (K): Each book in the library has a label describing its genre (like "science fiction," "mystery," or "history").
+Value (V): The librarian then gives you the content of the book (the story inside) that matches your request for "science fiction."
+
+in decoder block there is autoregressive format where it predicts one token at a time based on previous context
+but in encoder we allow all the nodes or token to completely talk to each other
